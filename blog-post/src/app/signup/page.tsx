@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import Inputfield from "../../../components/inputfield";
 import axios from "axios";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
@@ -55,7 +56,7 @@ const Signup = () => {
         onSubmit={handleSubmit}
       >
         <div className="w-full h-screen backdrop-blur-sm">
-          <Form className="w-[30%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+          <Form className=" h-screen bg-white bg-opacity-50  p-8 flex flex-col justify-center">
             <h1 className="text-3xl mb-4 mt-4">REGISTER</h1>
             <Inputfield
               type="text"

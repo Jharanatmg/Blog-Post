@@ -39,13 +39,13 @@ const Signin: React.FC = () => {
 
   const handleSubmit = async (values: FormValues) => {
     try {
-      const response = await axios.post("http://localhost:4000/login", {
+      const response = await axios.post("http://localhost:4000/users", {
         email: values.email,
         password: values.password,
       });
       toast.success("Successfully signed in");
       console.log(response.data);
-      router.push("/dashboard");
+      router.push("/newpost");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
       toast.error("Could not sign in");
