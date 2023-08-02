@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -12,22 +13,31 @@ import { PiGoogleLogo } from "react-icons/pi";
 import { CiFacebook, CiTwitter } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 
-const Signin = () => {
-  const initialvalues = {
+interface FormValues {
+  email: string;
+  password: string;
+  checkbox: boolean;
+}
+
+const Signin: React.FC = () => {
+  const initialValues: FormValues = {
     email: "",
     password: "",
+    checkbox: false,
   };
+
   const validationSchema = Yup.object({
-    email: Yup.string().required("Please enter valid email address."),
-    password: Yup.string().required("Please enter correct password"),
+    email: Yup.string().required("Please enter a valid email address."),
+    password: Yup.string().required("Please enter a correct password."),
     checkbox: Yup.boolean().oneOf(
       [true],
       "Please accept all the terms and conditions."
     ),
   });
+
   const router = useRouter();
 
-  const handleSubmit = async (values: typeof initialvalues) => {
+  const handleSubmit = async (values: FormValues) => {
     try {
       const response = await axios.post("http://localhost:4000/login", {
         email: values.email,
@@ -45,7 +55,7 @@ const Signin = () => {
   return (
     <div className="bgimg h-screen flex justify-center items-center">
       <Formik
-        initialValues={initialvalues}
+        initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
@@ -75,10 +85,10 @@ const Signin = () => {
                   {" "}
                   LogIn
                 </button>
-                <Link href="/sign-up" passHref>
-                  <a className="text-center underline mb-4">
+                <Link href="/sign-up">
+                  <p className="text-center underline mb-4">
                     Don't have an Account? Sign Up
-                  </a>
+                  </p>
                 </Link>
                 <p className="text-center mb-4">OR</p>
                 <p className="text-center">Sign Up Using</p>
