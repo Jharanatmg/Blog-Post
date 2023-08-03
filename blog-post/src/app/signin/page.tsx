@@ -30,10 +30,10 @@ const Signin: React.FC = () => {
   const validationSchema = Yup.object({
     email: Yup.string().required("Please enter a valid email address."),
     password: Yup.string().required("Please enter a correct password."),
-    checkbox: Yup.boolean().oneOf(
-      [true],
-      "Please accept all the terms and conditions."
-    ),
+    // checkbox: Yup.boolean().oneOf(
+    //   [true],
+    //   "Please accept all the terms and conditions."
+    // ),
   });
 
   const router = useRouter();
@@ -60,22 +60,27 @@ const Signin: React.FC = () => {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        {() => {
+        {({handleSubmit , values, handleChange }) => {
           return (
             <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm text-blue-900 font-medium">
-              <Form className="w-[30%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
+              <Form onSubmit={handleSubmit} className="w-[30%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
                 <h1 className="text-3xl mb-4">LOGIN</h1>
                 <Inputfield
                   type="text"
                   name="email"
                   label="Email Address"
                   icon={<FiUser />}
+                  values={values.email}
+                  onChange={handleChange}
                 />
                 <Inputfield
                   type="password"
                   name="password"
                   label="Password"
                   icon={<BsLock />}
+                  values={values.password}
+                  onChange={handleChange}
+
                 />
                 <p className="text-right mb-8">Forgot Password?</p>
 
