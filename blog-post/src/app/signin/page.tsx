@@ -17,30 +17,27 @@ import { useRouter } from "next/navigation";
 interface FormValues {
   email: string;
   password: string;
-  checkbox: boolean;
+  
 }
 
 const Signin: React.FC = () => {
   const initialValues: FormValues = {
     email: "",
     password: "",
-    checkbox: false,
+   
   };
 
   const validationSchema = Yup.object({
     email: Yup.string().required("Please enter a valid email address."),
     password: Yup.string().required("Please enter a correct password."),
-    // checkbox: Yup.boolean().oneOf(
-    //   [true],
-    //   "Please accept all the terms and conditions."
-    // ),
+    
   });
 
   const router = useRouter();
 
   const handleSubmit = async (values: FormValues) => {
     try {
-      const response = await axios.post("http://localhost:4002/users", {
+      const response = await axios.post("http://localhost:4002/login", {
         email: values.email,
         password: values.password,
       });
@@ -91,7 +88,7 @@ const Signin: React.FC = () => {
                   {" "}
                   LogIn
                 </button>
-                <Link href="/sign-up">
+                <Link href="/signup">
                   <p className="text-center underline mb-4">
                     Don't have an Account? Sign Up
                   </p>
