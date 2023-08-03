@@ -22,12 +22,18 @@ export default function Home() {
   
 
   return (
-   <div>
+    <>
+   <div className='bg-green-300 w-full h-full'>
     {data.map((post)=>(
-      <li key={post.id}>
-        <h1>{post.title}</h1>
+      <ul className=''>
+      <li className='' key={post.id}>
+        <h1 className='text-green-900'>{post.title}</h1>
+        <img src={post.image} width="200px"/>
+        <h1>{post.description}</h1>
       </li>
+      </ul>
     ))}
    </div>
+   </>
   )
 }
