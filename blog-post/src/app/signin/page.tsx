@@ -85,7 +85,7 @@ const Signin: React.FC = () => {
                   {" "}
                   LogIn
                 </button>
-                <Link href="/sign-up">
+                <Link href="/signup">
                   <p className="text-center underline mb-4">
                     Don't have an Account? Sign Up
                   </p>

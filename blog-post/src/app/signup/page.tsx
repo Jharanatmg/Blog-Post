@@ -41,7 +41,7 @@ const Signup = () => {
         password: values.password,
       });
       toast.success("Successfully created your account.");
-      router.push("/sign-in");
+      router.push("/signin");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
       toast.error("Could not sign up");
