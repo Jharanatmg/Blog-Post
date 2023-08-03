@@ -8,6 +8,8 @@ interface IInputfield {
   type?: string | boolean;
   className?: string;
   icon?: React.ReactNode;
+  onChange?:(e:any)=> void;
+  values?:any
 }
 
 const Inputfield: React.FC<IInputfield> = ({
@@ -16,6 +18,8 @@ const Inputfield: React.FC<IInputfield> = ({
   type,
   className,
   icon,
+  onChange,
+  values
 }) => {
   return (
     <div className={className}>
@@ -25,6 +29,8 @@ const Inputfield: React.FC<IInputfield> = ({
         <Field
           type={type}
           name={name}
+          onChange={onChange}
+          value={values}
           className="flex flex-col bg-transparent  outline-none border-b-2 border-green-700 w-full ml-2"
         />
       </div>
