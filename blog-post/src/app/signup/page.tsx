@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Inputfield from "../../../components/inputfield";
+import Inputfield from "../../components/inputfield";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Formik, Form } from "formik";
@@ -36,7 +36,7 @@ const Signup = () => {
 
   const handleSubmit = async (values: typeof initialvalues) => {
     try {
-      const response = await axios.post("http://localhost:4000/users", {
+      const response = await axios.post("http://localhost:4002/users", {
         email: values.email,
         password: values.password,
       });

@@ -9,6 +9,12 @@
       "email": "kabina@gmail.com",
       "password": "$2a$10$WHdKApD9tl8Jvy.fWvYYGOwbxBS01LE1pL9Avy9w.hFBhgHxD9PFi",
       "id": 2
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$QClIWitu0wM5q1uMZpG3I.2J/Nc7R0t4vhIzVTsjx5pPSwfsML1P2",
+      "name": "kay",
+      "id": 3
     }
   ]
 }

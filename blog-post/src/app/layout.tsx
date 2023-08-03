@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
      
-      <body className=''><ReduxProvider>{children}</ReduxProvider></body>
+      <body className='bg-slate-200'><ReduxProvider>{children}</ReduxProvider></body>
       
     </html>
   );

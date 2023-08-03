@@ -10,6 +10,7 @@ export const fetchPosts= createAsyncThunk<Post[],void,{}>('posts/fetchPosts', as
 })
 interface Post{
   id:number,
+  
   title:string,
   description:string,
   author:string,
