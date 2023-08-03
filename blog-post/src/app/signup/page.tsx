@@ -39,7 +39,9 @@ const Signup = () => {
       });
       toast.success("Successfully created your account.");
       router.push("/signin");
-      localStorage.setItem("session-token", response.data.accessToken);
+      localStorage.setItem("session-token", response.data.accessToken)
+     
+      
     } catch (error) {
       toast.error("Could not sign up");
     }
@@ -95,6 +97,7 @@ const Signup = () => {
           </Form>
         </div>
       </Formik>
+      <ToastContainer/>
     </div>
   );
 };

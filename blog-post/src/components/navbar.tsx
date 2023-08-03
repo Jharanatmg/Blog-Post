@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -6,6 +7,9 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 function navbar() {
+  
+  const useremail=localStorage.getItem('email')
+  console.log(useremail)
   const router=useRouter()
   const handleLogout=()=>{
     localStorage.removeItem('session-token')
@@ -31,8 +35,17 @@ function navbar() {
       <li>Contact</li>
       <li>Shop</li>
       <button onClick={handlenewpost}>Create New post</button>
-      <li>Login</li>
-      <button onClick={handleLogout}>Logout</button>
+      {useremail ? (
+        <>
+        <li>{useremail}</li>
+
+         <button onClick={handleLogout}>Logout</button>
+         </>
+      ):(
+      <button><Link href='/signin'>Login</Link></button>
+      )}
+      
+     
     </ul>
     <ToastContainer/>
   </div>;

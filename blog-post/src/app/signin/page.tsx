@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState} from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Inputfield from "@/components/inputfield";
@@ -21,6 +21,7 @@ interface FormValues {
 }
 
 const Signin: React.FC = () => {
+  const[userEmail, setUserEmail]=useState('')
   const initialValues: FormValues = {
     email: "",
     password: "",
@@ -41,10 +42,14 @@ const Signin: React.FC = () => {
         email: values.email,
         password: values.password,
       });
+      setUserEmail(values.email)
+      console.log(userEmail)
       toast.success("Successfully signed in");
       console.log(response.data);
-      router.push("/newpost");
+     // router.push("/newpost");
       localStorage.setItem("session-token", response.data.accessToken);
+      localStorage.setItem("email", response.data.user.email)
+      console.log(response.data.user.email)
     } catch (error) {
       toast.error("Could not sign in");
     }
@@ -67,16 +72,14 @@ const Signin: React.FC = () => {
                   name="email"
                   label="Email Address"
                   icon={<FiUser />}
-                  values={values.email}
-                  onChange={handleChange}
+                  
                 />
                 <Inputfield
                   type="password"
                   name="password"
                   label="Password"
                   icon={<BsLock />}
-                  values={values.password}
-                  onChange={handleChange}
+                  
 
                 />
                 <p className="text-right mb-8">Forgot Password?</p>
