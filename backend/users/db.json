@@ -15,6 +15,11 @@
       "password": "$2a$10$QClIWitu0wM5q1uMZpG3I.2J/Nc7R0t4vhIzVTsjx5pPSwfsML1P2",
       "name": "kay",
       "id": 3
+    },
+    {
+      "email": "kay@gmail.com",
+      "password": "$2a$10$oqBupAlm4QRT4sUT1CW/ou3W4bQ8LwZPkcFvwNWSNgbZo8FPR2BUi",
+      "id": 4
     }
   ]
 }
