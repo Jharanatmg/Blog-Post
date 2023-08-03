@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import Navbar from "@/components/navbar";
+import Protectedroutes from '@/components/protectedroutes';
 
 
 function page() {
+  <Protectedroutes>
   return <div className="bg-white w-full h-screen">
     <Navbar/>
     <input type="text" placeholder="enter title"/>
@@ -12,6 +14,7 @@ function page() {
     <input type="text" placeholder="enter date"/>
     <input type="text" placeholder="enter image"/>
   </div>;
+  </Protectedroutes>
 }
 
 export default page;
