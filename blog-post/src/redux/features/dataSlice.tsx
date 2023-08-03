@@ -1,27 +1,45 @@
 import React from 'react'
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit'
 
 const JSONURL='http://localhost:4000/posts'
 
-export const fetchPosts= createAsyncThunk('posts/fetchPosts', async()=>{
+export const fetchPosts= createAsyncThunk<Post[],void,{}>('posts/fetchPosts', async()=>{
   const response= await fetch(JSONURL)
   const data=await response.json()
-  return data
+  return data as Post[]
 })
+interface Post{
+  id:number,
+  title:string,
+  description:string,
+  author:string,
+  date:string,
+  image:string,
+
+}
+interface PostState{
+  data:Post[],
+  status:'idle'|'loading'|'succeeded'|'failed'
+  error:string|null
+
+}
+const initialState:PostState={
+  data:[],
+  status:'idle',
+  error:null,
+}
 
  const dataSlice = createSlice({
   name:'posts',
-  initialState:{data:[],
-  status:'idle',
-error:null,
-},
+  initialState,
+
   reducers:{},
   extraReducers:(builder)=>{
     builder
     .addCase(fetchPosts.pending, (state)=>{
       state.status='loading'
     })
-    .addCase(fetchPosts.fulfilled, (state, action) => {
+    .addCase(fetchPosts.fulfilled, (state, action:PayloadAction<Post[]>) => {
       state.status = 'succeeded';
       state.data = action.payload;
     })
