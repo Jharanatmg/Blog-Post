@@ -15,6 +15,21 @@
       "password": "$2a$10$QClIWitu0wM5q1uMZpG3I.2J/Nc7R0t4vhIzVTsjx5pPSwfsML1P2",
       "name": "kay",
       "id": 3
+    },
+    {
+      "email": "kate@gmail.com",
+      "password": "$2a$10$4rlO7Uc/glxib.Q1zuNV3uyRBqGi8eOAUmxqfidGkm1ZUPqKHpw.O",
+      "id": 4
+    },
+    {
+      "email": "kay@gmail.com",
+      "password": "$2a$10$gcWvEIV2QDSd.ZMWX2PzxeQrZTQoPlrNbfMC1vE3GrUkiwAhIeDqa",
+      "id": 5
+    },
+    {
+      "email": "kate12@gmail.com",
+      "password": "$2a$10$nLgWIcffmLQjWs1BuHuqVO2roHjG6CfzPtJ/smGmiQmpTsVSR0S1m",
+      "id": 6
     }
   ]
 }
