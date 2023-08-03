@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "server": "json-server -p 4000 posts/db.json -m ./node_modules/json-server-auth",
-    "server2": "json-server -p 4000 users/db.json -m ./node_modules/json-server-auth"
+    "server-posts": "json-server -p 4001 posts/db.json -m ./node_modules/json-server-auth" ,
+    "server-users":"json-server -p 4002 users/db.json -m ./node_modules/json-server-auth"
   },
   "devDependencies": {
     "json-server": "^0.17.3",
