@@ -30,6 +30,11 @@
       "email": "kate12@gmail.com",
       "password": "$2a$10$nLgWIcffmLQjWs1BuHuqVO2roHjG6CfzPtJ/smGmiQmpTsVSR0S1m",
       "id": 6
+    },
+    {
+      "email": "kate21@gmail.com",
+      "password": "$2a$10$Y0RGaAnlOrdxVdizn.FgZu4Rt3rHjS4SGG/Pyk79s4IOmI0BkiEc6",
+      "id": 7
     }
   ]
 }

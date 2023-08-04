@@ -23,7 +23,7 @@ export default function Home() {
     
     <>
  <div className='bg-green-300 w-full h-full'>
-    <Navbar/>
+    
     <div className='flex justify-around'>
     <img src={data[0]?.image} width='500'/>
 
