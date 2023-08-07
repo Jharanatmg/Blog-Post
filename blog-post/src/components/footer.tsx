@@ -10,10 +10,10 @@ import {
 
 const Footer = () => {
   return (
-    <div className=" mx-auto mt-auto text-xl pb-12 pt-12">
-      <h1 className="ml-4 text-2xl">Stanton</h1>
+    <div className=" text-xl w-full p-8 bg-stone-100 pt-10">
+      <h1 className="ml-4 text-3xl">Stanton</h1>
 
-      <div className=" ml-4 flex w-full justify-between mt-2 text-sm">
+      <div className="flex w-full justify-between text-sm p-4">
         <h1>Copyright 2023. Powered by "K & J"</h1>
         <ul className="flex w-32 justify-around">
           <li>
