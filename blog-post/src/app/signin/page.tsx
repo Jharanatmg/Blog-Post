@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState} from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Inputfield from "@/components/inputfield";
@@ -17,37 +17,39 @@ import { useRouter } from "next/navigation";
 interface FormValues {
   email: string;
   password: string;
-  checkbox: boolean;
+  
 }
 
 const Signin: React.FC = () => {
+ 
   const initialValues: FormValues = {
     email: "",
     password: "",
-    checkbox: false,
+   
   };
 
   const validationSchema = Yup.object({
     email: Yup.string().required("Please enter a valid email address."),
     password: Yup.string().required("Please enter a correct password."),
-    // checkbox: Yup.boolean().oneOf(
-    //   [true],
-    //   "Please accept all the terms and conditions."
-    // ),
+    
   });
 
   const router = useRouter();
 
   const handleSubmit = async (values: FormValues) => {
     try {
-      const response = await axios.post("http://localhost:4002/users", {
+      const response = await axios.post("http://localhost:4002/login", {
         email: values.email,
         password: values.password,
       });
+      
+      
       toast.success("Successfully signed in");
       console.log(response.data);
       router.push("/newpost");
       localStorage.setItem("session-token", response.data.accessToken);
+      localStorage.setItem("email", response.data.user.email)
+      console.log(response.data.user.email)
     } catch (error) {
       toast.error("Could not sign in");
     }
@@ -70,16 +72,14 @@ const Signin: React.FC = () => {
                   name="email"
                   label="Email Address"
                   icon={<FiUser />}
-                  values={values.email}
-                  onChange={handleChange}
+                  
                 />
                 <Inputfield
                   type="password"
                   name="password"
                   label="Password"
                   icon={<BsLock />}
-                  values={values.password}
-                  onChange={handleChange}
+                  
 
                 />
                 <p className="text-right mb-8">Forgot Password?</p>
@@ -91,7 +91,7 @@ const Signin: React.FC = () => {
                   {" "}
                   LogIn
                 </button>
-                <Link href="/sign-up">
+                <Link href="/signup">
                   <p className="text-center underline mb-4">
                     Don't have an Account? Sign Up
                   </p>

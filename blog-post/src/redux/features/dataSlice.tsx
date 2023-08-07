@@ -1,7 +1,7 @@
 import React from 'react'
 import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit'
 
-const JSONURL='http://localhost:4000/posts'
+const JSONURL='http://localhost:4001/posts'
 
 export const fetchPosts= createAsyncThunk<Post[],void,{}>('posts/fetchPosts', async()=>{
   const response= await fetch(JSONURL)

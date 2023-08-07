@@ -27,10 +27,7 @@ const Signup = () => {
     confirmpassword: Yup.string()
       .required("Please confirm password")
       .oneOf([Yup.ref("password")], "Password must match"),
-    checkbox: Yup.boolean().oneOf(
-      [true],
-      "Please accept all the terms and conditions."
-    ),
+    
   });
   const router = useRouter();
 
@@ -41,8 +38,10 @@ const Signup = () => {
         password: values.password,
       });
       toast.success("Successfully created your account.");
-      router.push("/sign-in");
-      localStorage.setItem("session-token", response.data.accessToken);
+      router.push("/signin");
+      localStorage.setItem("session-token", response.data.accessToken)
+     
+      
     } catch (error) {
       toast.error("Could not sign up");
     }
@@ -98,6 +97,7 @@ const Signup = () => {
           </Form>
         </div>
       </Formik>
+      <ToastContainer/>
     </div>
   );
 };
