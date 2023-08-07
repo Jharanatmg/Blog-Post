@@ -22,10 +22,9 @@ export default function Home() {
   if (status === "failed") {
     return <p>Error:{error}</p>;
   }
-  
-    const postDisplay=data.slice(1,-2)
 
-  
+  const postDisplay = data.slice(1, -2);
+
   return (
     <>
       <div className="bg-custom-sage w-full h-full ">
@@ -67,43 +66,45 @@ export default function Home() {
           </div>
 
           <div className="bg-stone-200 p-2 flex flex-col justify-between items-center h-auto gap-12">
-          <div className="flex justify-around pt-12 pb-12 ">
-              <img src={data[data.length-2]?.image} width='500' />
+            <div className="flex justify-around pt-12 pb-12 ">
+              <img src={data[data.length - 2]?.image} width="500" />
               <div className="flex flex-col justify-center w-[40%] pl-8 gap-4">
-            <h1 className="text-l font-semibold">{data[data.length-1]?.title}</h1>
-            <h1 className="text-2xl">{data[data.length-1]?.description}</h1>
-          </div>
-             
+                <h1 className="text-l font-semibold">
+                  {data[data.length - 1]?.title}
+                </h1>
+                <h1 className="text-2xl">
+                  {data[data.length - 1]?.description}
+                </h1>
               </div>
-              
-              <div className="relative flex flex-col justify-center mx-auto w-[80%] h-screen">
-              <img src={data[data.length-1]?.image} className="object-cover w-full h-full" />
-              <div className='absolute text-white w-full text-center'>
+            </div>
+
+            <div className="relative flex flex-col justify-center mx-auto w-[80%] h-screen">
+              <img
+                src={data[data.length - 1]?.image}
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute text-white w-full text-center">
                 <p className="text-3xl m-4 font-bold"> Get the low-down.</p>
                 <p>
                   {" "}
                   Sign up with your email address to receive news and updates.{" "}
                 </p>
                 <input
-                    type="text"
-                    placeholder="Email Address"
-                    className="p-4 text-sm m-3 rounded-md "
-                  />
-                  <Link href="/signup">
-                    <button className="bg-orange-300 p-4 text-sm m-3 rounded-md">
-                      {" "}
-                      Sign Up{" "}
-                    </button>{" "}
-                  </Link>
-                  </div>
-                </div>
+                  type="text"
+                  placeholder="Email Address"
+                  className="p-4 text-sm m-3 rounded-md "
+                />
+                <Link href="/signup">
+                  <button className="bg-orange-300 p-4 text-sm m-3 rounded-md">
+                    {" "}
+                    Sign Up{" "}
+                  </button>{" "}
+                </Link>
               </div>
             </div>
           </div>
-        
-          
-        
-      
+        </div>
+      </div>
     </>
   );
 }
