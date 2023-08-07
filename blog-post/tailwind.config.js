@@ -16,6 +16,10 @@ module.exports = {
         "custom-sage": "#ABC69B",
         "light-green": "#ACE1AF",
       },
+
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

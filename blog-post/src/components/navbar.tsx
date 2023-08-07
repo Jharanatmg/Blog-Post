@@ -83,7 +83,7 @@ function navbar() {
             className="flex justify-center items-center bg-slate-900/30 p-1 rounded-md backdrop-blur-sm  text-black"
           />
         </div>
-        <div className="bg-slate-900/30  rounded-md backdrop-blur-sm">
+        <div className="bg-slate-900/30  rounded-md backdrop-blur-sm absolute top-16 left-44">
           {filterData.map((content: Content, index) => (
             <div
               key={index}
@@ -101,8 +101,10 @@ function navbar() {
           <li>Blog</li>
           <li>About</li>
           <li>Contact</li>
-          <li>Shop</li>
-          <button onClick={handlenewpost}>Create New post</button>
+
+          <button className=" hover:font-semibold " onClick={handlenewpost}>
+            Create New post
+          </button>
           {useremail ? (
             <>
               <div className="relative">
