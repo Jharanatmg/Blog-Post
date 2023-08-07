@@ -17,24 +17,9 @@
       "id": 3
     },
     {
-      "email": "kate@gmail.com",
-      "password": "$2a$10$4rlO7Uc/glxib.Q1zuNV3uyRBqGi8eOAUmxqfidGkm1ZUPqKHpw.O",
-      "id": 4
-    },
-    {
       "email": "kay@gmail.com",
-      "password": "$2a$10$gcWvEIV2QDSd.ZMWX2PzxeQrZTQoPlrNbfMC1vE3GrUkiwAhIeDqa",
-      "id": 5
-    },
-    {
-      "email": "kate12@gmail.com",
-      "password": "$2a$10$nLgWIcffmLQjWs1BuHuqVO2roHjG6CfzPtJ/smGmiQmpTsVSR0S1m",
-      "id": 6
-    },
-    {
-      "email": "kate21@gmail.com",
-      "password": "$2a$10$Y0RGaAnlOrdxVdizn.FgZu4Rt3rHjS4SGG/Pyk79s4IOmI0BkiEc6",
-      "id": 7
+      "password": "$2a$10$oqBupAlm4QRT4sUT1CW/ou3W4bQ8LwZPkcFvwNWSNgbZo8FPR2BUi",
+      "id": 4
     }
   ]
 }
