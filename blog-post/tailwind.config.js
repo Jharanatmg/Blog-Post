@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         "custom-sage": "#ABC69B",
+        "light-green": "#ACE1AF",
       },
     },
   },

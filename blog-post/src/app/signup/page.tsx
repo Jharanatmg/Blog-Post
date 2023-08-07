@@ -27,7 +27,6 @@ const Signup = () => {
     confirmpassword: Yup.string()
       .required("Please confirm password")
       .oneOf([Yup.ref("password")], "Password must match"),
-    
   });
   const router = useRouter();
 
@@ -39,16 +38,14 @@ const Signup = () => {
       });
       toast.success("Successfully created your account.");
       router.push("/signin");
-      localStorage.setItem("session-token", response.data.accessToken)
-     
-      
+      localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
       toast.error("Could not sign up");
     }
   };
 
   return (
-    <div className="bgimg h-screen flex justify-center items-center">
+    <div className="bg-custom-sage p-24 h-screen flex justify-center items-center">
       <Formik
         initialValues={initialvalues}
         validationSchema={validationSchema}
@@ -90,14 +87,14 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg backdrop-blur-md hover:scale-95"
+              className="border-2 w-full mb-6 border-black p-1 mb-8 mt-6 rounded-md text-lg backdrop-blur-md hover:scale-95"
             >
               Register
             </button>
           </Form>
         </div>
       </Formik>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
