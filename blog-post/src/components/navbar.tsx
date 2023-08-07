@@ -10,7 +10,7 @@ import { AppDispatch, RootState } from "@/redux/store";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUserCircle } from "react-icons/fa";
 
-function navbar() {
+function Navbar() {
   const [useremail, setUseremail] = useState("");
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -130,4 +130,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;
