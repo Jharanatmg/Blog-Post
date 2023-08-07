@@ -1,5 +1,5 @@
 "use client";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Inputfield from "@/components/inputfield";
@@ -17,21 +17,17 @@ import { useRouter } from "next/navigation";
 interface FormValues {
   email: string;
   password: string;
-  
 }
 
 const Signin: React.FC = () => {
- 
   const initialValues: FormValues = {
     email: "",
     password: "",
-   
   };
 
   const validationSchema = Yup.object({
     email: Yup.string().required("Please enter a valid email address."),
     password: Yup.string().required("Please enter a correct password."),
-    
   });
 
   const router = useRouter();
@@ -42,51 +38,50 @@ const Signin: React.FC = () => {
         email: values.email,
         password: values.password,
       });
-      
-      
+
       toast.success("Successfully signed in");
       console.log(response.data);
       router.push("/newpost");
       localStorage.setItem("session-token", response.data.accessToken);
-      localStorage.setItem("email", response.data.user.email)
-      console.log(response.data.user.email)
+      localStorage.setItem("email", response.data.user.email);
+      console.log(response.data.user.email);
     } catch (error) {
       toast.error("Could not sign in");
     }
   };
 
   return (
-    <div className="bgimg h-screen flex justify-center items-center">
+    <div className="bg-custom-sage p-24 h-screen flex justify-center items-center">
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        {({handleSubmit , values, handleChange }) => {
+        {({ handleSubmit, values, handleChange }) => {
           return (
-            <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm text-blue-900 font-medium">
-              <Form onSubmit={handleSubmit} className="w-[30%] h-screen bg-white bg-opacity-50 border-l-2 border-r-2 p-8 flex flex-col justify-center">
-                <h1 className="text-3xl mb-4">LOGIN</h1>
+            <div className=" w-full h-screen backdrop-blur-sm font-medium">
+              <Form
+                onSubmit={handleSubmit}
+                className="h-screen bg-white bg-opacity-50  p-8 flex flex-col justify-center"
+              >
+                <h1 className="text-3xl mb-4 mt-4">LOGIN</h1>
                 <Inputfield
                   type="text"
                   name="email"
                   label="Email Address"
                   icon={<FiUser />}
-                  
                 />
                 <Inputfield
                   type="password"
                   name="password"
                   label="Password"
                   icon={<BsLock />}
-                  
-
                 />
                 <p className="text-right mb-8">Forgot Password?</p>
 
                 <button
                   type="submit"
-                  className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg"
+                  className="border-2 w-full mb-6 border-black p-1 mb-8 mt-6 rounded-md text-lg backdrop-blur-md hover:scale-95"
                 >
                   {" "}
                   LogIn

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "@/redux/features/dataSlice";
 import { AppDispatch, RootState } from "@/redux/store";
 import Navbar from "@/components/navbar";
+import Link from "next/link";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
@@ -58,13 +59,28 @@ export default function Home() {
               </ul>
             ))}
           </div>
-          <div className="bg-emerald-100 w-full h-full ">
-            <div className="flex justify-around p-8">
-              <img src={data[10]?.image} width="500" />
-
-              <div className="flex flex-col justify-center w-[50%] pl-8 gap-4">
-                <h1 className="text-3xl font-semibold">{data[10]?.title}</h1>
-                <h1 className="text-base">{data[10]?.description}</h1>
+          <div className="flex justify-center bg-custom-sage w-full">
+            <div>
+              <img src={data[1]?.image} height={300} width={900} />
+              <div className="flex flex-col justify-center items-center">
+                <p className="text-2xl m-4"> Get the low-down.</p>
+                <p>
+                  {" "}
+                  Sign up with your email address to receive news and updates.{" "}
+                </p>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Email Address"
+                    className="pl-6 pr-24 pt-6 pb-6 text-xs m-3 "
+                  />
+                  <Link href="/signup">
+                    <button className="bg-orange-300 p-6 text-xs m-3">
+                      {" "}
+                      Sign Up{" "}
+                    </button>{" "}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

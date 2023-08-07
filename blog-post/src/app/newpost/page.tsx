@@ -61,8 +61,8 @@ function page() {
 
   return (
     <Protected>
-      <div className="bg-white w-full h-auto flex justify-around border-2">
-        <img src={data[0]?.image} width="500px" />
+      <div className="bg-white w-full h-auto flex justify-around border-2 pb-3 font-poppins">
+        <img src={data[0]?.image} width="550px" />
 
         <form
           className="flex flex-col w-[50%] gap-4 text-2xl pt-4"
@@ -103,7 +103,7 @@ function page() {
           />
           <label>Author</label>
           <input
-            className="border-2 outline-none p-4 rounded-md"
+            className="border-2 outline-none p-4 rounded-md mb-2"
             type="text"
             placeholder="author.."
             value={author}
