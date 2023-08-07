@@ -58,6 +58,7 @@ function page() {
       console.error("Error adding post:", error);
     }
   };
+  
 
   return (
     <Protected>

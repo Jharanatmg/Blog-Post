@@ -22,6 +22,10 @@ export default function Home() {
   if (status === "failed") {
     return <p>Error:{error}</p>;
   }
+  
+    const postDisplay=data.slice(1,-1)
+
+  
   return (
     <>
       <div className="bg-custom-sage w-full h-full ">
@@ -45,7 +49,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-3 gap-4 m-6">
-            {data.map((post) => (
+            {postDisplay.map((post) => (
               <ul>
                 <li className="" key={post.id}>
                   <img src={post.image} width="350px" />
@@ -60,9 +64,10 @@ export default function Home() {
             ))}
           </div>
           <div className="flex justify-center bg-custom-sage w-full">
-            <div>
-              <img src={data[1]?.image} height={300} width={900} />
+            <div className="h-96">
+              <img src={data[data.length-1]?.image} />
               <div className="flex flex-col justify-center items-center">
+              <img src={data[0]?.image} width='500' />
                 <p className="text-2xl m-4"> Get the low-down.</p>
                 <p>
                   {" "}
