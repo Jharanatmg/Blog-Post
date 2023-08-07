@@ -85,8 +85,16 @@
       "title": "Stanton Recipes Ed. 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia.",
       "image": "https://images.squarespace-cdn.com/content/v1/624b503d454ebf5dd68421e1/1649102922468-9NTPMK441ZGJD163LNIB/stanton-book.jpg",
-      "author": "",
-      "date": ""
+      "author": "Pete k",
+      "date": "3/12/22"
+    },
+    {
+      "id": "12",
+      "title": "Stanton Recipes Ed. 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia.",
+      "image": "https://images.squarespace-cdn.com/content/v1/624b503d454ebf5dd68421e1/1649102922476-N77TLCATRIQPUXSPSWP4/charred-corn-salad-with-creamy-lime-dressing12.jpg?format=2500w",
+      "author": "Pete B",
+      "date": "6/11/22"
     }
     
   ]
