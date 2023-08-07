@@ -48,12 +48,13 @@ export default function Home() {
               enim ad minim veniam, quis nostrud.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 m-6">
+          <div className="grid grid-cols-3  grid-flow-rows gap-4 m-6" style={{ gridAutoFlow: "dense" }}>
             {postDisplay.map((post) => (
+              <div className="col-start-auto">
               <ul>
                 <li className="" key={post.id}>
                   <img src={post.image} width="350px" />
-                  <h1 className="text-green-900 text-2xl pb-3 pt-3">
+                  <h1 className="text-salmon-300 text-2xl pb-3 pt-3">
                     {post.title}
                   </h1>
                   <h1 className="text-xs text-justify pr-12">
@@ -61,6 +62,7 @@ export default function Home() {
                   </h1>
                 </li>
               </ul>
+              </div>
             ))}
           </div>
 
