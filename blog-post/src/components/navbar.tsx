@@ -101,8 +101,8 @@ function Navbar() {
           <li className=" hover:font-semibold ">
             <Link href="/">Blog </Link>
           </li>
-          <li>About</li>
-          <li>Contact</li>
+          <li className=" hover:font-semibold ">About</li>
+          <li className=" hover:font-semibold ">Contact</li>
 
           <button className=" hover:font-semibold " onClick={handlenewpost}>
             Create New post
@@ -121,7 +121,7 @@ function Navbar() {
               </div>
             </>
           ) : (
-            <button>
+            <button className=" hover:font-semibold ">
               <Link href="/signin">Login</Link>
             </button>
           )}

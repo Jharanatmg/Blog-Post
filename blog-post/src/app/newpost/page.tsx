@@ -58,7 +58,6 @@ function page() {
       console.error("Error adding post:", error);
     }
   };
-  
 
   return (
     <Protected>
@@ -110,7 +109,12 @@ function page() {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
-          <button type="submit">Add</button>
+          <button
+            className="border-2 border-custom-sage p-2 text-3xl"
+            type="submit"
+          >
+            Add
+          </button>
         </form>
         <ToastContainer />
       </div>

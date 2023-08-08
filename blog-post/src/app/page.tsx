@@ -47,7 +47,7 @@ export default function Home() {
               enim ad minim veniam, quis nostrud.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 m-6">
+          <div className="columns-3 gap-4 m-6">
             {postDisplay.map((post) => (
               <ul>
                 <li className="" key={post.id}>
@@ -55,13 +55,13 @@ export default function Home() {
                   <h1 className="text-xs text-justify pr-12 pt-4">
                     {post.date}
                   </h1>
-                  <h1 className="text-green-900 text-2xl pb-3 pt-1">
+                  <h1 className="text-green-900 text-2xl pb-2 pt-1">
                     {post.title}
                   </h1>
                   <h1 className="text-xs text-justify pr-12">
                     {post.description}
                   </h1>
-                  <h1 className="text-sm font-semibold text-green-800 pr-12">
+                  <h1 className="text-sm font-semibold text-green-800 pr-12 mb-8">
                     - {post.author}
                   </h1>
                 </li>
