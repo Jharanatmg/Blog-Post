@@ -10,12 +10,12 @@ import {
 
 const Footer = () => {
   return (
-    <div className=" mx-auto mt-auto text-xl pb-12 pt-12">
-      <h1 className="ml-4 text-2xl">Stanton</h1>
+    <div className="w-full mx-auto mt-auto text-xl pb-12 pt-12">
+      <h1 className="ml-12 text-2xl">Stanton</h1>
 
-      <div className=" ml-4 flex w-full justify-between mt-2 text-sm">
+      <div className=" ml-12 flex justify-between mt-2 text-sm">
         <h1>Copyright 2023. Powered by "K & J"</h1>
-        <ul className="flex w-32 justify-around">
+        <ul className="flex w-24 justify-around">
           <li>
             <BsFacebook />
           </li>
@@ -29,8 +29,8 @@ const Footer = () => {
             <BsLinkedin />
           </li>
         </ul>
-        <div className="ml-4 flex justify-between">
-          <ul className="flex justify-around w-32">
+        <div className="flex justify-between mr-12">
+          <ul className="flex justify-around w-24">
             <li>
               <FaCcPaypal />
             </li>

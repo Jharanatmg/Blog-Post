@@ -98,7 +98,9 @@ function Navbar() {
           ))}
         </div>
         <ul className="flex justify-between w-[60%] p-2 text-sm">
-          <li>Blog</li>
+          <li className=" hover:font-semibold ">
+            <Link href="/">Blog </Link>
+          </li>
           <li>About</li>
           <li>Contact</li>
 

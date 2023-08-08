@@ -52,11 +52,17 @@ export default function Home() {
               <ul>
                 <li className="" key={post.id}>
                   <img src={post.image} width="350px" />
-                  <h1 className="text-green-900 text-2xl pb-3 pt-3">
+                  <h1 className="text-xs text-justify pr-12 pt-4">
+                    {post.date}
+                  </h1>
+                  <h1 className="text-green-900 text-2xl pb-3 pt-1">
                     {post.title}
                   </h1>
                   <h1 className="text-xs text-justify pr-12">
                     {post.description}
+                  </h1>
+                  <h1 className="text-sm font-semibold text-green-800 pr-12">
+                    - {post.author}
                   </h1>
                 </li>
               </ul>
@@ -90,7 +96,7 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Email Address"
-                  className="p-4 text-sm m-3 rounded-md "
+                  className="p-4 text-black text-sm m-3 rounded-md "
                 />
                 <Link href="/signup">
                   <button className="bg-orange-300 p-4 text-sm m-3 rounded-md">
